@@ -1,0 +1,52 @@
+Teamoppgave 5
+----------------------------------------------------------------------------------------------------------
+
+Hvordan det skal se ut: 
+vi skal ha bilder med de forskjellige hendene
+settes opp i en femkant
+Farge? Bakgrunnsfarge? big bang theory relatert
+noe alerts eller popup?
+sette denne som bakgrunn:
+https://c4.wallpaperflare.com/wallpaper/1017/500/836/the-big-bang-theory-wallpaper-preview.jpg
+
+det skal komme opp en melding med hva du har valgt og hva PC har valgt
+det skal komme opp en melding med hvem som vant
+det skal lages i MVC
+
+noe mer?
+
+---------------------------------------------------------------------------------------------------------
+
+Must have: 
+
+1. Bilder som kan trykkes på med tekst som viser om du vinner mot random computer valg.
+
+
+---------------------------------------------------------------------------------------------------------
+
+Nice to have: 
+
+
+1. Bildene plassert samme måte som fra netside.
+
+2. Farge på valgt bilde, samme for computer valg? 
+
+3. Få det til å se mer fancy ut.
+
+4. En reload button.
+
+5. Lage unitTester underveis
+
+
+---------------------------------------------------------------------------------------------------------
+
+Hvem jobber med hva:
+
+
+Marius: CSS, funksjoner
+
+Magnus: Functions, Tekst
+
+Mago: Reload, funksjoner, fikse bilder
+
+Carina: CSS, Tekst

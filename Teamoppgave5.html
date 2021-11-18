@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team oppgave 5</title>
+    <style>
+        div {
+            margin: auto;
+        }
+        body {
+            background-image: url('https://imgur.com/GU2mbFs');
+            /* background-repeat: no-repeat; */
+            /* background-position: center; */
+            background-size: auto;
+            margin: auto;
+            text-align : center;
+            
+            /* BILDENE:
+            https://cdn.discordapp.com/attachments/906182080734572645/910867874938241024/papir.png
+            https://cdn.discordapp.com/attachments/906182080734572645/910867921188843600/stein.png
+            https://cdn.discordapp.com/attachments/906182080734572645/910867930936389632/lizard.png
+            https://cdn.discordapp.com/attachments/906182080734572645/910867940369367090/spok.png
+            https://cdn.discordapp.com/attachments/906182080734572645/910867940369367090/spok.png
+            */
+        }        
+    </style>
+</head>
+<body>
+    <div id="mainDiv"></body>
+    <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
+    <script>
+    //Model
+
+    //View
+    updateView();
+    function updateView() {
+        document.getElementById('mainDiv').innerHTML = `
+        <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
+        <div background-image: url()> </div>
+        <img onclick="klurekuk(this)"src="https://cdn.discordapp.com/attachments/906182080734572645/910867874938241024/papir.png">
+        </br>
+        <button onclick="reset(this)">Start på nytt!</button>
+
+        `;
+    }
+
+    //Controller
+    function reset(){
+        location.reload();        
+    }
+
+    </script>
+    
+</body>
+</html>
