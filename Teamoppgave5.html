@@ -6,40 +6,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team oppgave 5</title>
     <style>
-        div {
+        /* div {
             margin: auto;
-        }
-        body {
-            background-image: url('https://imgur.com/GU2mbFs');
-            /* background-repeat: no-repeat; */
-            /* background-position: center; */
-            background-size: auto;
-            margin: auto;
-            text-align : center;
+        } */
+        /* #mainDiv {
+            background-image: url('https://cdn.discordapp.com/attachments/906182080734572645/912311063742148658/undefined_-_Imgur.jpg');
+            background-repeat: no-repeat; */
+            /* background-position: fill; */
+            /* background-size: cover;
+            background-attachment: fixed; */
+        /* } */
+        /* body { */
+            /* background-image: url('https://cdn.discordapp.com/attachments/906182080734572645/912311063742148658/undefined_-_Imgur.jpg');
+            background-repeat: no-repeat;
+            /* background-size: 100%; */
+            /* background-attachment: fixed; */
+            /*background-size: auto;*/
+            /* margin: auto; */
+            /* text-align : center;
+            display: grid; */
+        
             
             /* BILDENE:
             https://cdn.discordapp.com/attachments/906182080734572645/910867874938241024/papir.png
             https://cdn.discordapp.com/attachments/906182080734572645/910867921188843600/stein.png
             https://cdn.discordapp.com/attachments/906182080734572645/910867930936389632/lizard.png
             https://cdn.discordapp.com/attachments/906182080734572645/910867940369367090/spok.png
-            https://cdn.discordapp.com/attachments/906182080734572645/910867940369367090/spok.png
+            https://cdn.discordapp.com/attachments/906182080734572645/910867962880208956/saks.png
+            https://cdn.discordapp.com/attachments/906182080734572645/912311063742148658/undefined_-_Imgur.jpg
             */
-        }        
+        /* }         */
+        #mainDiv {
+            /* margin-left: auto;
+            margin-right: auto;   
+            position: center;  
+            text-align: center;
+            align-items: center; */
+
+            /* display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            position: relative;  */
+        }
+        body {
+            background-color: gray;
+            display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+        h1 {
+            text-align : center;
+        }
+
+        .grid-container {
+            background-image: url('https://cdn.discordapp.com/attachments/906182080734572645/912311063742148658/undefined_-_Imgur.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            /* height: 100vh;
+            width: 100vw;  */
+
+            display: grid;
+            grid-template-columns: auto auto auto auto auto ;
+            /* padding: 10px; */
+        }
     </style>
 </head>
 <body>
-    <div id="mainDiv"></body>
-    <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
+    <div id="mainDiv"></div>
+
+    </body>
+    <!-- <h1>Rock, Paper, Scissors, Lizard, Spock</h1> -->
     <script>
     //Model
+    var userChoice;
 
     //View
     updateView();
     function updateView() {
         document.getElementById('mainDiv').innerHTML = `
         <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
-        <div background-image: url()> </div>
-        <img onclick="klurekuk(this)"src="https://cdn.discordapp.com/attachments/906182080734572645/910867874938241024/papir.png">
+        <!---<img src="https://cdn.discordapp.com/attachments/906182080734572645/910867940369367090/spok.png"> -->
+        <!---<img id="png" onclick="selectImg(this)"src="https://cdn.discordapp.com/attachments/906182080734572645/910867874938241024/papir.png">-->
+        </br>
+        <div class="grid-container">
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item" onclick="selectImg(this)"><img id="saks" src="https://cdn.discordapp.com/attachments/906182080734572645/910867962880208956/saks.png"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"><img id="spok" onclick="selectImg(this)"src="https://cdn.discordapp.com/attachments/906182080734572645/910867940369367090/spok.png"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"><img id="papir" onclick="selectImg(this)"src="https://cdn.discordapp.com/attachments/906182080734572645/910867874938241024/papir.png"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"><img id="lizard" onclick="selectImg(this)"src="https://cdn.discordapp.com/attachments/906182080734572645/910867930936389632/lizard.png"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"><img id="stein" onclick="selectImg(this)"src="https://cdn.discordapp.com/attachments/906182080734572645/910867921188843600/stein.png"></div>
+        <div class="grid-item"></div>
+        </div>
         </br>
         <button onclick="reset(this)">Start på nytt!</button>
 
@@ -50,6 +116,33 @@
     function reset(){
         location.reload();        
     }
+    
+    function selectImg(element){
+        //document.getElementById('spok' , 'papir' , 'lizard' , 'stein' ,).style.opacity ='40%';
+ 
+        
+    }
+    /*function selectImg2(element){
+        userChoice = 
+        document.getElementById('spok').style.opacity ='40%';
+        
+    }
+    function selectImg3(element){
+        userChoice = 
+        document.getElementById('papir').style.opacity ='40%';
+        
+    }
+    function selectImg4(element){
+        userChoice = 
+        document.getElementById('lizard').style.opacity ='40%';
+        
+    }
+    function selectImg5(element){
+        userChoice = 
+        document.getElementById('stein').style.opacity ='40%';
+        
+    }*/
+
 
     </script>
     
