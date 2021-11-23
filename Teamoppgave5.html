@@ -5,55 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team oppgave 5</title>
-    <style>
-        /* div {
-            margin: auto;
-        } */
-        /* #mainDiv {
-            background-image: url('https://cdn.discordapp.com/attachments/906182080734572645/912311063742148658/undefined_-_Imgur.jpg');
-            background-repeat: no-repeat; */
-            /* background-position: fill; */
-            /* background-size: cover;
-            background-attachment: fixed; */
-        /* } */
-        /* body { */
-            /* background-image: url('https://cdn.discordapp.com/attachments/906182080734572645/912311063742148658/undefined_-_Imgur.jpg');
-            background-repeat: no-repeat;
-            /* background-size: 100%; */
-            /* background-attachment: fixed; */
-            /*background-size: auto;*/
-            /* margin: auto; */
-            /* text-align : center;
-            display: grid; */
-        
-            
-            /* BILDENE:
-            https://cdn.discordapp.com/attachments/906182080734572645/910867874938241024/papir.png
-            https://cdn.discordapp.com/attachments/906182080734572645/910867921188843600/stein.png
-            https://cdn.discordapp.com/attachments/906182080734572645/910867930936389632/lizard.png
-            https://cdn.discordapp.com/attachments/906182080734572645/910867940369367090/spok.png
-            https://cdn.discordapp.com/attachments/906182080734572645/910867962880208956/saks.png
-            https://cdn.discordapp.com/attachments/906182080734572645/912311063742148658/undefined_-_Imgur.jpg
-            */
-        /* }         */
-        #mainDiv {
-            /* margin-left: auto;
-            margin-right: auto;   
-            position: center;  
-            text-align: center;
-            align-items: center; */
-
-            /* display: flex;
+    <style>        
+        body {
+            background-color: #83131f;
+            display: flex;
             align-items: center;
             justify-content: center;
-            margin: auto;
-            position: relative;  */
-        }
-        body {
-            background-color: gray;
-            display: flex;
-        align-items: center;
-        justify-content: center;
         }
         h1 {
             text-align : center;
@@ -62,13 +19,9 @@
         .grid-container {
             background-image: url('https://cdn.discordapp.com/attachments/906182080734572645/912311063742148658/undefined_-_Imgur.jpg');
             background-repeat: no-repeat;
-            background-position: center;
-            /* height: 100vh;
-            width: 100vw;  */
-
+            background-position: center;            
             display: grid;
-            grid-template-columns: auto auto auto auto auto ;
-            /* padding: 10px; */
+            grid-template-columns: auto auto auto auto auto ;            
         }
     </style>
 </head>
@@ -76,73 +29,110 @@
     <div id="mainDiv"></div>
 
     </body>
-    <!-- <h1>Rock, Paper, Scissors, Lizard, Spock</h1> -->
     <script>
-    //Model
-    var userChoice;
 
-    //View
+    var userChoice;
+    let randomAnswer = "";
+    const cpChoice = ["Rock", "Papir", "Scissor", "Lizard", "Spock"];
+    let chosenAnswer = "";
+    let Vinneren = "";
+    
+
+
     updateView();
     function updateView() {
         document.getElementById('mainDiv').innerHTML = `
         <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
-        <!---<img src="https://cdn.discordapp.com/attachments/906182080734572645/910867940369367090/spok.png"> -->
-        <!---<img id="png" onclick="selectImg(this)"src="https://cdn.discordapp.com/attachments/906182080734572645/910867874938241024/papir.png">-->
         </br>
         <div class="grid-container">
         <div class="grid-item"></div>
         <div class="grid-item"></div>
-        <div class="grid-item" onclick="selectImg(this)"><img id="saks" src="https://cdn.discordapp.com/attachments/906182080734572645/910867962880208956/saks.png"></div>
+        <div class="grid-item" onclick="selectImg2(this)"><img id="saks" src="https://cdn.discordapp.com/attachments/906182080734572645/910867962880208956/saks.png"></div>
         <div class="grid-item"></div>
         <div class="grid-item"></div>
-        <div class="grid-item"><img id="spok" onclick="selectImg(this)"src="https://cdn.discordapp.com/attachments/906182080734572645/910867940369367090/spok.png"></div>
+        <div class="grid-item" onclick="selectImg(this)"><img id="spok" src="https://cdn.discordapp.com/attachments/906182080734572645/910867940369367090/spok.png"></div>
         <div class="grid-item"></div>
         <div class="grid-item"></div>
         <div class="grid-item"></div>
-        <div class="grid-item"><img id="papir" onclick="selectImg(this)"src="https://cdn.discordapp.com/attachments/906182080734572645/910867874938241024/papir.png"></div>
+        <div class="grid-item" onclick="selectImg3(this)"><img id="papir" src="https://cdn.discordapp.com/attachments/906182080734572645/910867874938241024/papir.png"></div>
         <div class="grid-item"></div>
-        <div class="grid-item"><img id="lizard" onclick="selectImg(this)"src="https://cdn.discordapp.com/attachments/906182080734572645/910867930936389632/lizard.png"></div>
+        <div class="grid-item" onclick="selectImg4(this)"><img id="lizard" src="https://cdn.discordapp.com/attachments/906182080734572645/910867930936389632/lizard.png"></div>
         <div class="grid-item"></div>
-        <div class="grid-item"><img id="stein" onclick="selectImg(this)"src="https://cdn.discordapp.com/attachments/906182080734572645/910867921188843600/stein.png"></div>
+        <div class="grid-item" onclick="selectImg5(this)"><img id="stein" src="https://cdn.discordapp.com/attachments/906182080734572645/910867921188843600/stein.png"></div>
         <div class="grid-item"></div>
-        </div>
-        </br>
+        <br>
+        <div id="valg">Du valgte: ${chosenAnswer} <br> PC valgte: ${randomAnswer} <br> Vinneren er: ${Vinneren}</div>
+        </br>  
         <button onclick="reset(this)">Start på nytt!</button>
-
+        <br>
         `;
     }
 
-    //Controller
+
     function reset(){
         location.reload();        
     }
     
-    function selectImg(element){
-        //document.getElementById('spok' , 'papir' , 'lizard' , 'stein' ,).style.opacity ='40%';
- 
+    function selectImg(){
+        document.getElementById('spok').style.opacity ='70%'; 
+        chosenAnswer = "Spock";
+        if(randomAnswer == "Papir" || randomAnswer == "Lizard"){
+            Vinneren = "PC";
+        } else {
+            Vinneren = "Spiller";
+        }
+        getAnswer();
+    
         
     }
-    /*function selectImg2(element){
-        userChoice = 
-        document.getElementById('spok').style.opacity ='40%';
+    function selectImg2(){
+        document.getElementById('saks').style.opacity ='70%';
+        chosenAnswer = "Scissors";
+        if(randomAnswer == "Rock" || randomAnswer == "Spock"){
+            Vinneren = "PC";
+        } else {
+            Vinneren = "Spiller";
+        }
+        getAnswer();
         
     }
-    function selectImg3(element){
-        userChoice = 
-        document.getElementById('papir').style.opacity ='40%';
-        
+    function selectImg3(){
+        document.getElementById('papir').style.opacity ='70%';
+        chosenAnswer = "Paper";
+        if(randomAnswer == "Scissor" || randomAnswer == "Lizard"){
+            Vinneren = "PC";
+        } else {
+            Vinneren = "Spiller";
+        }
+        getAnswer();
     }
-    function selectImg4(element){
-        userChoice = 
-        document.getElementById('lizard').style.opacity ='40%';
-        
+    function selectImg4(){
+        document.getElementById('lizard').style.opacity ='70%';
+        chosenAnswer = "Lizard";
+        if(randomAnswer == "Rock" || randomAnswer == "Scissor"){
+            Vinneren = "PC";
+        } else {
+            Vinneren = "Spiller";
+        }
+        getAnswer();
     }
-    function selectImg5(element){
-        userChoice = 
-        document.getElementById('stein').style.opacity ='40%';
-        
-    }*/
+    function selectImg5(){
+        document.getElementById('stein').style.opacity ='70%';
+        chosenAnswer = "Stein";
+        if(randomAnswer == "Papir" || randomAnswer == "Spock"){
+            Vinneren = "PC";
+        } else {
+            Vinneren = "Spiller";
+        }
+        getAnswer();
+    }
 
+    function getAnswer(){
+        let randomIndex = Math.floor(Math.random() * cpChoice.length);
+        randomAnswer = cpChoice[randomIndex];
+        updateView();
+        
+    }
 
     </script>
     
